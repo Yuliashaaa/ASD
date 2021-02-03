@@ -1,7 +1,11 @@
 #include <iostream>
 using namespace std;
 
-int GCD(int m, int n);
+int GCD(int m, int n){
+  if (n == 0)
+    return m;
+  return GCD(n, m % n);
+}
 
 int main(){
   int x, y;
@@ -11,10 +15,4 @@ int main(){
   cin >> y;
   cout << "\n The greatest common divisor of " << x << " and " << y << " is " << GCD(x, y);
   return 0;
-}
-
-int GCD(int m, int n){
-  if (n == 0)
-    return m;
-  return GCD(n, m % n);
 }
