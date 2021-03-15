@@ -6,7 +6,9 @@ int main() {
     int a[7] = { 22, 20, -1, -40, 88, -75, -22 }; // Starting array
     int size = 7; // Array size
     int temp; // Variable for element swap
-    bool exit = false; // Variable to check swaps;
+    bool exit = false; // Variable to check swaps
+    int compare = 0; // Variable for comparisons
+    int swap = 0; // Variable for swaps
 
     auto start = std::chrono::steady_clock::now();
 
@@ -14,11 +16,13 @@ int main() {
         exit = true;
         for (int i = 0; i < size - 1; i++) {
             for (int j = 0; j < size - 1 - i; j++) {
+                compare++;
                 if (a[j] > a[j + 1]) {
                     temp = a[j];
                     a[j] = a[j + 1];
                     a[j + 1] = temp;
                     exit = false;
+                    swap++;
                 }
             }
         }
@@ -33,5 +37,9 @@ int main() {
 
     auto time = std::chrono::duration_cast<std::chrono::microseconds>(finish - start);
     cout << endl;
-    cout << "Algorithm work time : " << time.count() << " microseconds";
+    cout << "Algorithm work time: " << time.count() << " microseconds";
+    cout << endl;
+    cout << "Amout of comparisons: " << compare;
+    cout << endl;
+    cout << "Amount of exchanges: " << swap;
 }
