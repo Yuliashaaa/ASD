@@ -39,7 +39,7 @@ int main() {
     cout << endl;
     cout << "Algorithm work time: " << time.count() << " microseconds";
     cout << endl;
-    cout << "Amout of comparisons: " << compare;
+    cout << "Amount of comparisons: " << compare;
     cout << endl;
     cout << "Amount of exchanges: " << swap;
 }
